@@ -1,4 +1,4 @@
-const form = document.getElementById('list-form');
+const formTodo = document.getElementById('list-form');
 const containerTask = document.getElementById('toDo-list');
 const newToDo = document.getElementById('imput-task');
 let toDos = [];
@@ -23,14 +23,19 @@ const renderToDo = () => {
   }
 };
 
+const updateLocalStorage = (tasksArray) => {
+  localStorage.setItem('todos', JSON.stringify(tasksArray));
+}
+
 const edit = (index) => {
   const tasksArray = JSON.parse(localStorage.getItem('todos')) || [];
   const textInputs = document.querySelectorAll('.text-input');
   textInputs[index].addEventListener('change', () => {
     tasksArray[index].value = textInputs[index].value;
-    localStorage.setItem('todos', JSON.stringify(tasksArray));
+    updateLocalStorage(tasksArray);
   });
 };
+
 
 class TODOLIST {
   strikeThrough(id) {
@@ -84,7 +89,7 @@ const submitIcon = document.getElementById('submit-icon');
 submitIcon.addEventListener('click', addTask);
 
 // form submit
-form.addEventListener('submit', (event) => {
+formTodo.addEventListener('submit', (event) => {
   event.preventDefault();
 
   addTask();
