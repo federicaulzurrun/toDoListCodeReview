@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/6e8f4ae605.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <title>To do list</title>
 </head>
 <body>
-  <h1>to do</h1>
+    <header>
+        <h1 class="mainTitle">To do list</h1>
+    </header>
+        
+    <!--To do list-->
+    <main>
+        <div class="container-list">
+    <div class="titleListContainer">
+        <h2 class="toDoList-title">Today's to do</h2>
+    </div>
+    <div class="container-listForm">
+        <form class="list-form" id="list-form">
+            <input id="imput-task" type="text" placeholder="Add to your list...">
+            <i class="fas fa-arrow-left" id="submit-icon"></i>
+        </form>
+    </div>
+    <div class="list-content" id="toDo-list">
+        <!-- Tasks -->
+    </div>
+    <div class="btn-container">
+        <button class="btn" id="clear-btn" type="button">Clear all completed</button>
+    </div>
+        </div>
+    </main>
+<script src="./index.js"></script>
 </body>
 </html>
